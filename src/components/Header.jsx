@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { LoginContext } from '../context/LoginProvider'
+import { LoginContext } from '../context/LoginContext'
 
 const Header = () => {
   const navigate = useNavigate()

@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import apiTypeRol from '../services/apiTypeRol'
-import { LoginContext } from '../context/LoginProvider'
+import { LoginContext } from '../context/LoginContext'
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 

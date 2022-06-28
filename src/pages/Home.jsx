@@ -1,15 +1,35 @@
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import useAPIProducts from '../hooks/useAPIProducts'
+import useProductsContext from '../hooks/useProductsContext'
 import '../styles/Home.css'
-import { ProductsContext } from '../context/ProductsProvider'
-import { useContext, useEffect, useState } from 'react'
-import apiGetProducts from '../services/apiGetProducts'
 
 const Home = () => {
-  const { data } = useContext(ProductsContext)
-  const [dataProducts, setDataProducts] = useState([])
+  const { products, setProducts } = useProductsContext()
+  const { data, error } = useAPIProducts('https://ecomerce-master.herokuapp.com/api/v1/item')
+  if (error) return <p>{error.message}</p>
   useEffect(() => {
-    const response = apiGetProducts()
-    console.log(response)
+    setProducts(data)
   })
+  console.log(products)
+  return (
+    <section className='row gy-4'>
+      {products.map((product, key) => (
+        <div key={key} className='col-12 col-sm-6 col-md-6 col-lg-3'>
+          <Link to={`product/${product._id}`}>
+            <article className='card'>
+              <img loading='lazy' className='card-img-top' src={product.image} alt={product.product_name} />
+              <div className='card-body'>
+                <p className='card-title'>{product.product_name}</p>
+                <p className='card-title'>{product.brand}</p>
+                <p className='card-title'>${product.price}.00 MXN</p>
+              </div>
+            </article>
+          </Link>
+        </div>
+      ))}
+    </section>
+  )
 }
 
 export default Home

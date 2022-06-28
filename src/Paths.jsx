@@ -3,6 +3,7 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Error404 from './pages/Error404'
+import Product from './pages/Product'
 
 const Paths = () => {
   const element = useRoutes([
@@ -17,6 +18,10 @@ const Paths = () => {
     {
       path: '/home',
       element: <Home />
+    },
+    {
+      path: '/home/product/:id',
+      element: <Product />
     },
     {
       path: '/404',

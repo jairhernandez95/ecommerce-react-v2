@@ -9,15 +9,15 @@ import { Suspense, StrictMode } from 'react'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Suspense>
-      <LoginProvider>
-        <BrowserRouter>
-          <ProductsProvider>
-            <Header />
+    <LoginProvider>
+      <BrowserRouter>
+        <ProductsProvider>
+          <Header />
+          <Suspense>
             <Paths />
-          </ProductsProvider>
-        </BrowserRouter>
-      </LoginProvider>
-    </Suspense>
+          </Suspense>
+        </ProductsProvider>
+      </BrowserRouter>
+    </LoginProvider>
   </StrictMode>
 )

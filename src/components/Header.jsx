@@ -1,6 +1,7 @@
 import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { LoginContext } from '../context/LoginContext'
+import shoppingBangs from '../assets/shopping-bangs.png'
 
 const Header = () => {
   const navigate = useNavigate()
@@ -13,11 +14,12 @@ const Header = () => {
   if (tokenAlive === false) {
     return (
       <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-        <a className='navbar-brand' href='#'>Ecommerce with React</a>
+        <img src={shoppingBangs} alt='' />
+        <Link to='/home'><img src='../assets/shopping-bangs.png' /></Link>
         <div>
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item active'>
-              <a className='nav-link' href='#'>Home</a>
+              <Link to='/home'>Home</Link>
             </li>
           </ul>
         </div>

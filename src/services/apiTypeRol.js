@@ -7,14 +7,15 @@ const apiTypeRol = (email, password) => {
     headers: {},
     data: { email, password }
   }
-  axios(config)
+  return axios(config)
     .then(function (res) {
-      console.log(res)
       console.log('Success')
       window.localStorage.setItem('token', res.data.token.toString())
+      return res
     })
     .catch(function (error) {
       console.log(error)
+      return error
     })
 }
 

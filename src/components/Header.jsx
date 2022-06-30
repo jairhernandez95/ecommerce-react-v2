@@ -13,6 +13,12 @@ const Header = () => {
     window.localStorage.clear('token')
     navigate('/home')
   }
+  const login = () => {
+    navigate('/login')
+  }
+  const signup = () => {
+    navigate('/signup')
+  }
   const handleSubmit = (event) => {
     event.preventDefault()
     const value = searchRef.current.value.trim()
@@ -36,24 +42,25 @@ const Header = () => {
           <form className='form-inline my-2 my-lg-0' onSubmit={handleSubmit}>
             <input className='form-control mr-sm-2' type='search' placeholder='Search Product' aria-label='Search' ref={searchRef} />
             <button className='btn btn-warning my-2 my-sm-0' type='submit'>Search</button>
+            <button className='btn btn-danger my-2 my-sm-0' onClick={login}>Login</button>
+            <button className='btn btn-primary my-2 my-sm-0' onClick={signup}>Signup</button>
           </form>
         </div>
       </nav>
     )
   } else {
     return (
-      <nav className='navbar navbar-expand-lg navbar-dark bg-primary'>
-        <a className='navbar-brand' href='#'>Ecommerce with React</a>
+      <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <div>
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item active'>
-              <a className='nav-link' href='#'>Home</a>
+              <Link to='/home'>Home</Link>
             </li>
           </ul>
         </div>
         <div>
-          <form className='form-inline my-2 my-lg-0'>
-            <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' />
+          <form className='form-inline my-2 my-lg-0' onSubmit={handleSubmit}>
+            <input className='form-control mr-sm-2' type='search' placeholder='Search' aria-label='Search' ref={searchRef} />
             <button className='btn btn-warning my-2 my-sm-0' type='submit'>Search</button>
             <button className='btn btn-danger my-2 my-sm-0' onClick={logout}>Logout</button>
           </form>

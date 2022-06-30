@@ -6,18 +6,21 @@ import { LoginProvider } from './context/LoginContext'
 import { ProductsProvider } from './context/ProductsContext'
 import Header from './components/Header'
 import { Suspense, StrictMode } from 'react'
+import { UserProvider } from './context/UserContext'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <LoginProvider>
-      <BrowserRouter>
-        <ProductsProvider>
-          <Header />
-          <Suspense>
-            <Paths />
-          </Suspense>
-        </ProductsProvider>
-      </BrowserRouter>
+      <UserProvider>
+        <BrowserRouter>
+          <ProductsProvider>
+            <Header />
+            <Suspense>
+              <Paths />
+            </Suspense>
+          </ProductsProvider>
+        </BrowserRouter>
+      </UserProvider>
     </LoginProvider>
   </StrictMode>
 )

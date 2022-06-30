@@ -18,7 +18,7 @@ const Search = () => {
         <section className='row gy-4'>
           {filteredProducts.map((product, key) => (
             <div key={key} className='col-12 col-sm-6 col-md-6 col-lg-3'>
-              <Link to={`/products/product/${product.product_name}`}>
+              <Link to={`/home/product/${product._id}`}>
                 <article className='card'>
                   <img loading='lazy' className='card-img-top' src={product.image} alt={product.product_name} />
                   <div className='card-body'>

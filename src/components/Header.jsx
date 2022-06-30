@@ -18,7 +18,7 @@ const Header = () => {
     const value = searchRef.current.value.trim()
     if (value !== '') {
       handleFilterProducts(value)
-      navigate('/product/search', { replace: true })
+      navigate('/home/search', { replace: true })
       event.target.reset()
     }
   }

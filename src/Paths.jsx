@@ -1,9 +1,9 @@
 import { Navigate, useRoutes } from 'react-router-dom'
-
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Error404 from './pages/Error404'
 import Product from './pages/Product'
+import Search from './components/Search'
 
 const Paths = () => {
   const element = useRoutes([
@@ -24,7 +24,8 @@ const Paths = () => {
       element: <Product />
     },
     {
-      path: 'home'
+      path: '/home/search/:id',
+      element: <Search />
     },
     {
       path: '/404',

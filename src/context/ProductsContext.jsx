@@ -18,19 +18,28 @@ export const ProductsProvider = ({ children }) => {
       console.log(filteredProducts)
       setSms({
         type: 'error',
-        message: 'Product not found'
+        message: 'Product(s) not found'
       })
     } else {
       setFilteredProducts(filtered)
       console.log(products)
       setSms({
         type: 'success',
-        message: 'Products found'
+        message: 'Product(s) found'
       })
     }
   }
+
+  const intialValue = {
+    products,
+    setProducts,
+    filteredProducts,
+    sms,
+    handleFilterProducts
+  }
+
   return (
-    <ProductsContext.Provider value={{ products, setProducts, filteredProducts, sms, handleFilterProducts }}>
+    <ProductsContext.Provider value={intialValue}>
       {children}
     </ProductsContext.Provider>
   )

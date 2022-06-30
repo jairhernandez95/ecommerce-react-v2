@@ -24,6 +24,9 @@ const Paths = () => {
       element: <Product />
     },
     {
+      path: 'home'
+    },
+    {
       path: '/404',
       element: <Error404 />
     },

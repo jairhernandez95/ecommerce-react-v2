@@ -11,7 +11,6 @@ const Home = () => {
   useEffect(() => {
     setProducts(data)
   })
-  console.log(products)
   return (
     <section className='row gy-4'>
       {products.map((product, key) => (

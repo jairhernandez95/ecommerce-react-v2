@@ -5,6 +5,7 @@ import Error404 from './pages/Error404'
 import Product from './pages/Product'
 import Search from './components/Search'
 import Signup from './pages/Signup'
+import LoadProduct from './pages/LoadProduct'
 
 const Paths = () => {
   const element = useRoutes([
@@ -31,6 +32,10 @@ const Paths = () => {
     {
       path: '/signup',
       element: <Signup />
+    },
+    {
+      path: '/load-product',
+      element: <LoadProduct />
     },
     {
       path: '/404',

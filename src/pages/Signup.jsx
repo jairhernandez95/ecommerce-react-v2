@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Signup = () => {
   const navigate = useNavigate()
-  const { tokenAlive, setTokenAlive } = useContext(LoginContext)
+  const { tokenAlive } = useContext(LoginContext)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const updateEmail = (event) => {

@@ -20,8 +20,8 @@ const Home = () => {
               <img loading='lazy' className='card-img-top' src={product.image} alt={product.product_name} />
               <div className='card-body'>
                 <p className='card-title'>{product.product_name}</p>
-                <p className='card-title'>{product.brand}</p>
-                <p className='card-title'>${product.price}.00 MXN</p>
+                <p className='card-title'>Marca: {product.brand}</p>
+                <p className='card-title'>Precio: ${product.price}.00 MXN</p>
               </div>
             </article>
           </Link>

@@ -37,7 +37,7 @@ const Header = () => {
   console.log(userRole)
   if (userRole === 'ADMIN' && tokenAlive === true) {
     return (
-      <nav className='navbar navbar-expand-lg navbar-dark bg-dark sticky-top'>
+      <nav className='navbar navbar-expand-lg sticky-top header'>
         <div>
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item active'>
@@ -63,7 +63,7 @@ const Header = () => {
     )
   } else if (userRole === 'CUSTOMER' && tokenAlive === true) {
     return (
-      <nav className='navbar navbar-expand-lg navbar-dark bg-dark sticky-top'>
+      <nav className='navbar navbar-expand-lg sticky-top header'>
         <div>
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item active'>
@@ -88,7 +88,7 @@ const Header = () => {
     )
   } else if (tokenAlive === false && (userRole !== 'ADMIN' || userRole !== 'CUSTOMER')) {
     return (
-      <nav className='navbar navbar-expand-lg navbar-dark bg-dark sticky-top'>
+      <nav className='navbar navbar-expand-lg sticky-top header'>
         <div>
           <ul className='navbar-nav mr-auto'>
             <li className='nav-item active'>

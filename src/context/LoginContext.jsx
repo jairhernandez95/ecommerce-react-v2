@@ -14,9 +14,3 @@ export const LoginProvider = ({ children }) => {
     </LoginContext.Provider>
   )
 }
-
-// const useLoginContext = () => {
-//   return useContext(LoginContext)
-// }
-
-// export { LoginProvider, useLoginContext }

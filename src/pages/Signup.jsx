@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import apiGetUser from '../services/apiGetUser'
+import apiSignup from '../services/apiSingup'
 import { LoginContext } from '../context/LoginContext'
-import { SignupContext } from '../context/SignupContext'
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -40,7 +39,7 @@ const Signup = () => {
   }
   const callAPI = async (event) => {
     event.preventDefault()
-    const response = await apiGetUser()
+    const response = await apiSignup(name, lastName, birthDate, gender, email, password)
     console.log(response)
     // setTokenAlive(true)
     // navigate('/home')
@@ -53,31 +52,31 @@ const Signup = () => {
       <form onSubmit={callAPI}>
         <div className='form-group'>
           <label>First Name</label>
-          <input type='email' className='form-control' placeholder='Carlos' onChange={updateName} />
+          <input type='text' className='form-control' placeholder='Carlos' onChange={updateName} />
         </div>
         <div className='form-group'>
           <label>Last Name</label>
-          <input type='password' className='form-control' placeholder='Mendez' onChange={updateLastName} />
+          <input type='text' className='form-control' placeholder='Mendez' onChange={updateLastName} />
         </div>
         <div className='form-group'>
           <label>Birth Date</label>
-          <input type='password' className='form-control' placeholder='1995-01-23' onChange={updateBirthDate} />
+          <input type='text' className='form-control' placeholder='1995-01-23' onChange={updateBirthDate} />
         </div>
         <div className='form-group'>
           <label>Gender("F" form female and "M" for male)</label>
-          <input type='Text' className='form-control' placeholder='M' onChange={updateGender} />
+          <input type='text' className='form-control' placeholder='M' onChange={updateGender} />
         </div>
         <div className='form-group'>
           <label>E-mail</label>
-          <input type='Text' className='form-control' placeholder='danylo@gmail.com' onChange={updateEmail} />
+          <input type='text' className='form-control' placeholder='danylo@gmail.com' onChange={updateEmail} />
         </div>
         <div className='form-group'>
           <label>Password</label>
-          <input type='Text' className='form-control' placeholder='********' onChange={updatePassword} />
+          <input type='password' className='form-control' placeholder='********' onChange={updatePassword} />
         </div>
         <div className='form-group'>
           <label>Repeat Password</label>
-          <input type='Text' className='form-control' placeholder='********' />
+          <input type='password' className='form-control' placeholder='********' />
         </div>
         <button type='submit' className='btn btn-primary'>Signup</button>
       </form>

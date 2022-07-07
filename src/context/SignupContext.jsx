@@ -1,9 +1,11 @@
-import React from 'react'
+import { createContext } from 'react'
 
-const SignupContext = () => {
+export const SignupContext = createContext(null)
+
+export const SignupProvider = ({ children }) => {
   return (
-    <div>SignupContext</div>
+    <SignupContext.Provider>
+      {children}
+    </SignupContext.Provider>
   )
 }
-
-export default SignupContext

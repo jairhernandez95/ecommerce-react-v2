@@ -7,23 +7,23 @@ import { useNavigate } from 'react-router-dom'
 const Signup = () => {
   const navigate = useNavigate()
   const { tokenAlive } = useContext(LoginContext)
-  const [name, setName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [birthDate, setBirthDate] = useState('')
+  const [first_name, setFirst_Name] = useState('')
+  const [last_name, setLast_Name] = useState('')
+  const [birth_date, setBirth_Date] = useState('')
   const [gender, setGender] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const updateName = (event) => {
-    setName(event.target.value)
-    console.log(name)
+    setFirst_Name(event.target.value)
+    console.log(first_name)
   }
   const updateLastName = (event) => {
-    setLastName(event.target.value)
-    console.log(lastName)
+    setLast_Name(event.target.value)
+    console.log(last_name)
   }
   const updateBirthDate = (event) => {
-    setBirthDate(event.target.value)
-    console.log(birthDate)
+    setBirth_Date(event.target.value)
+    console.log(birth_date)
   }
   const updateGender = (event) => {
     setGender(event.target.value)
@@ -39,8 +39,7 @@ const Signup = () => {
   }
   const callAPI = async (event) => {
     event.preventDefault()
-    const response = await apiSignup(name, lastName, birthDate, gender, email, password)
-    console.log(response)
+    const response = await apiSignup(first_name, last_name, birth_date, gender, email, password)
     // setTokenAlive(true)
     // navigate('/home')
   }

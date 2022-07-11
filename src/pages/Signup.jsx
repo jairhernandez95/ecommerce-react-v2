@@ -3,6 +3,7 @@ import apiSignup from '../services/apiSingup'
 import { LoginContext } from '../context/LoginContext'
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Login from './Login'
 
 const Signup = () => {
   const navigate = useNavigate()
@@ -40,8 +41,8 @@ const Signup = () => {
   const callAPI = async (event) => {
     event.preventDefault()
     const response = await apiSignup(first_name, last_name, birth_date, gender, email, password)
-    // setTokenAlive(true)
-    // navigate('/home')
+    await console.log(response)
+    navigate('/login')
   }
 
   if (tokenAlive === true) {
